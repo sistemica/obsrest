@@ -10,6 +10,7 @@ A RESTful API service that provides web access to an Obsidian vault with full-te
 - 📊 YAML frontmatter support
 - 📄 PDF content search support
 - 🔄 Automatic file change detection and indexing
+- 📚 OpenAPI/Swagger documentation
 
 ## Quick Start
 
@@ -26,12 +27,19 @@ git clone https://github.com/sistemica/obsrest.git
 cd obsrest
 ```
 
-2. Build and run with Docker Compose:
+2. Build the Docker image:
+```bash
+docker build -t obsidian-web-api .
+```
+
+3. Run with Docker Compose:
 ```bash
 docker compose up -d
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be available at:
+- API Endpoint: `http://localhost:8000`
+- Swagger UI Documentation: `http://localhost:8000/docs`
 
 ### Configuration
 
@@ -48,7 +56,9 @@ volumes:
   - /path/to/your/vault:/data/vault
 ```
 
-## API Endpoints
+## API Documentation
+
+Interactive API documentation is available through Swagger UI at `http://localhost:8000/docs`.
 
 ### Directory Operations
 
