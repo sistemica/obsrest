@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "obsidian-web-api"
+version = "0.1.0"
+description = "Web API for Obsidian vault management"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
+pyyaml = "^6.0.1"
+python-multipart = "^0.0.9"
+pydantic = "^2.6.3"
+whoosh = "^2.7.4"
+pypdf = "^4.0.2"
+watchdog = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
