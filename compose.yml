@@ -1,6 +1,6 @@
 services:
   api:
-    image: obsidian-web-api
+    image: ghcr.io/sistemica/obsrest:latest
     ports:
       - "8000:8000"
     volumes:
