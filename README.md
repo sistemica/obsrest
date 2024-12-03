@@ -23,10 +23,20 @@ A RESTful API service that provides web access to an Obsidian vault with full-te
 There are 3 ways to run ObsREST:
 
 #### Option 1: Run with Docker
+Basic usage:
 ```bash
 docker run -d \
   -p 8000:8000 \
   -v /path/to/your/vault:/data/vault \
+  ghcr.io/sistemica/obsrest:latest
+```
+
+To ensure files are created with your user permissions:
+```bash
+docker run -d \
+  -p 8000:8000 \
+  -v /path/to/your/vault:/data/vault \
+  --user $(id -u):$(id -g) \
   ghcr.io/sistemica/obsrest:latest
 ```
 
