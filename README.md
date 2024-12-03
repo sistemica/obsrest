@@ -15,12 +15,29 @@ A RESTful API service that provides web access to an Obsidian vault with full-te
 ## Quick Start
 
 ### Prerequisites
-
-- Docker and Docker Compose
+- Docker
 - An existing Obsidian vault directory
 
 ### Installation
 
+There are 3 ways to run ObsREST:
+
+#### Option 1: Run with Docker
+```bash
+docker run -d \
+  -p 8000:8000 \
+  -v /path/to/your/vault:/data/vault \
+  ghcr.io/sistemica/obsrest:latest
+```
+
+Replace `/path/to/your/vault` with the actual path to your Obsidian vault.
+
+The API will be available at:
+- API Endpoint: `http://localhost:8000`
+- Swagger UI Documentation: `http://localhost:8000/docs`
+
+
+#### Option 2: Build from Source
 1. Clone the repository:
 ```bash
 git clone https://github.com/sistemica/obsrest.git
@@ -42,8 +59,8 @@ The API will be available at:
 - Swagger UI Documentation: `http://localhost:8000/docs`
 
 ### Configuration
-
 Set your Obsidian vault path in one of these ways:
+
 1. Environment variable:
 ```bash
 export OBSIDIAN_VAULT=/path/to/your/vault
